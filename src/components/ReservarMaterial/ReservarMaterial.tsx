@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
   Button,
@@ -8,29 +8,29 @@ import {
 } from "@mui/material";
 
 const ReservarMaterial = () => {
-    const [material, setMaterial] = useState("");
-    const [quantidade, setQuantidade] = useState("");
-    const navigate = useNavigate();
+  const [material, setMaterial] = useState("");
+  const [quantidade, setQuantidade] = useState("");
+  const navigate = useNavigate();
 
-    const salvarReserva = (reserva: any) => {
-        const reservas = JSON.parse(localStorage.getItem("reservas") || "[]");
-        reservas.push(reserva);
-        localStorage.setItem("reservas", JSON.stringify(reservas));   
-    };
+  const salvarReserva = (reserva: any) => {
+    const reservas = JSON.parse(localStorage.getItem("reservas") || "[]");
+    reservas.push(reserva);
+    localStorage.setItem("reservas", JSON.stringify(reservas));
+  };
 
-    const handleSubimit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if(!material || !quantidade){
-        alert("Preencha os campos.");
-        return;
-        }
+  const handleSubimit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!material || !quantidade) {
+      alert("Preencha os campos.");
+      return;
+    }
 
-    salvarReserva({tipo: "Material", descricao: material, quantidade});
+    salvarReserva({ tipo: "Material", descricao: material, quantidade });
     alert("Material reservado com sucesso.");
-    navigate("/");
-    };
-    return(
-      <Box
+    navigate("/home");
+  };
+  return (
+    <Box
       component="form"
       onSubmit={handleSubimit}
       sx={{
@@ -60,11 +60,11 @@ const ReservarMaterial = () => {
         Reservar
       </Button>
 
-      <Button type="button" variant="outlined" onClick={() => navigate("/")}>
+      <Button className="btn-voltar" type="button" variant="outlined" onClick={() => navigate("/home")}>
         Voltar
       </Button>
     </Box>
-    )
+  )
 }
 
 export default ReservarMaterial;

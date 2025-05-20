@@ -35,7 +35,7 @@ select,
 input {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #fdfdfd;
 }
 
 ul {
@@ -61,4 +61,138 @@ li button {
   border-radius: 5px;
   color: white;
   cursor: pointer;
+}
+
+.MuiInputBase-input.MuiOutlinedInput-input.css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input {
+  background-color: rgb(255, 255, 255);
+}
+
+.MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  background-color: rgb(255, 255, 255);
+}
+
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-outlined.MuiFormLabel-colorPrimary.Mui-required.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-outlined.css-113d811-MuiFormLabel-root-MuiInputLabel-root {
+  color: #ffffff;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: -10px;
+}
+
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-outlined.MuiFormLabel-colorPrimary.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-outlined.css-113d811-MuiFormLabel-root-MuiInputLabel-root {
+  color: #ffffff;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: -10px;
+}
+
+
+/* -------- */
+:root {
+  --azul: #003f7f;
+  --branco: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--azul);
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* TELAS */
+.tela-inicial,
+.tela-cadastro,
+.tela-home {
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* LOGO */
+.logo {
+  font-size: 64px;
+  margin-bottom: 10px;
+  align-items: center;
+
+}
+
+/* TÍTULOS */
+h1,
+h2 {
+  margin-bottom: 24px;
+}
+
+/* BOTÕES */
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-cancel {
+  background-color: blue;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--branco);
+  color: var(--azul);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* FORMULÁRIO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* VOLTAR */
+.voltar {
+  background: none;
+  color: var(--branco);
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-voltar {
+  background-color: rgb(255, 255, 255) !important;
+  color: #1976D2 !important;
+  font-weight: bold !important;
+}
+
+.btn-voltar2 {
+  background-color: #1976D2 !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+/* MENSAGEM */
+#mensagem {
+  margin-top: 16px;
+  color: lightgreen;
 }

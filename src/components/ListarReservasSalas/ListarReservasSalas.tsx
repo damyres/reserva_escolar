@@ -8,7 +8,7 @@ const ListarReservasSalas = () => {
 
   useEffect(() => {
     const storedReservas = JSON.parse(localStorage.getItem("reservas") || "[]");
-    const reservasFiltradas = storedReservas.filter((reserva: any) => reserva.tipo==="Sala");
+    const reservasFiltradas = storedReservas.filter((reserva: any) => reserva.tipo === "Sala");
     setReservas(reservasFiltradas)
   }, []);
 
@@ -23,7 +23,7 @@ const ListarReservasSalas = () => {
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        width: 500,
+        width: 300,
         margin: "auto",
         mt: 5,
       }}
@@ -36,17 +36,14 @@ const ListarReservasSalas = () => {
               <ListItemText
                 primary={`${reserva.descricao} - ${new Date(
                   reserva.data
-                ).toLocaleDateString("pt-BR")} - ${reserva.hora} - ${
-                  reserva.periodo
-                }`}
+                ).toLocaleDateString("pt-BR")} - ${reserva.hora} - ${reserva.periodo
+                  }`}
               />
               <Button
                 variant="contained"
                 color="error"
                 onClick={() => cancelarReserva(index)}
-              >
-                Cancelar
-              </Button>
+              >cancelar</Button>
             </ListItem>
           ))}
         </List>
@@ -54,7 +51,7 @@ const ListarReservasSalas = () => {
         <p>Nenhuma reserva encontrada</p>
       )}
 
-      <Button variant="outlined" onClick={() => navigate("/")}>
+      <Button className="btn-voltar2" variant="outlined" onClick={() => navigate("/home")}>
         Voltar
       </Button>
     </Box>

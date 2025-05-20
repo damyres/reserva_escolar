@@ -33,11 +33,11 @@ const ReservarSala = () => {
 
     salvarReserva({ tipo: "Sala", descricao: sala, data, hora, periodo });
     alert("Sala reservada com sucesso");
-    navigate("/");
+    navigate("/home");
   };
   return (
-    <Box 
-    component="form"
+    <Box
+      component="form"
       onSubmit={handleSubimit}
       sx={{
         display: "flex",
@@ -72,11 +72,11 @@ const ReservarSala = () => {
       />
 
       <TextField
-      label="Hora"
-      type="time"
-      value={hora}
-      onChange={(e) => setHora(e.target.value)}
-      InputLabelProps={{shrink: true}}>
+        label="Hora"
+        type="time"
+        value={hora}
+        onChange={(e) => setHora(e.target.value)}
+        InputLabelProps={{ shrink: true }}>
       </TextField>
 
       <FormControl fullWidth required>
@@ -86,7 +86,7 @@ const ReservarSala = () => {
           value={periodo}
           label="Período"
           onChange={(e) => setPeriodo(e.target.value)}
-        > 
+        >
           <MenuItem value="Manhã">Manhã</MenuItem>
           <MenuItem value="Tarde">Tarde</MenuItem>
           <MenuItem value="Noite">Noite</MenuItem>
@@ -96,10 +96,10 @@ const ReservarSala = () => {
         Reservar
       </Button>
 
-      <Button type="button" variant="outlined" onClick={() => navigate("/")}>
+      <Button className="btn-voltar" type="button" variant="outlined" onClick={() => navigate("/home")}>
         Voltar
       </Button>
-    </Box>    
+    </Box>
   );
 };
 

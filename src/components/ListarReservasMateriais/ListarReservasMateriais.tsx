@@ -3,27 +3,27 @@ import { useNavigate } from "react-router-dom";
 import { Button, Box, List, ListItem, ListItemText } from "@mui/material";
 
 const ListarReservasMateriais = () => {
-    const [reservas, setReservas] = useState<any[]>([]);
-    const navigate = useNavigate();
+  const [reservas, setReservas] = useState<any[]>([]);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const storedReservas = JSON.parse(localStorage.getItem("reservas") || "[]");
-        const reservasFiltradas = storedReservas.filter((reserva:any) => reserva.tipo === "Material");
-        setReservas(reservasFiltradas);
-    }, []);
-    
-    const cancelarReserva = (index:number) => {
-        const novasReservas = reservas.filter((_, i)=> i !== index);
-        setReservas(novasReservas);
-        localStorage.setItem("reservas", JSON.stringify(novasReservas));
-    }
-    return(
-        <Box
+  useEffect(() => {
+    const storedReservas = JSON.parse(localStorage.getItem("reservas") || "[]");
+    const reservasFiltradas = storedReservas.filter((reserva: any) => reserva.tipo === "Material");
+    setReservas(reservasFiltradas);
+  }, []);
+
+  const cancelarReserva = (index: number) => {
+    const novasReservas = reservas.filter((_, i) => i !== index);
+    setReservas(novasReservas);
+    localStorage.setItem("reservas", JSON.stringify(novasReservas));
+  }
+  return (
+    <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        width: 500,
+        width: 300,
         margin: "auto",
         mt: 5,
       }}
@@ -34,7 +34,7 @@ const ListarReservasMateriais = () => {
           {reservas.map((reserva, index) => (
             <ListItem key={index} divider>
               <ListItemText
-                primary={`${reserva.descricao} - Quantidade: ${reserva.quantidade}`}
+                primary={`${reserva.descricao} - ${reserva.quantidade}`}
               />
               <Button
                 variant="contained"
@@ -50,11 +50,11 @@ const ListarReservasMateriais = () => {
         <p>Nenhuma reserva encontrada</p>
       )}
 
-      <Button variant="outlined" onClick={() => navigate("/")}>
+      <Button className="btn-voltar2" variant="outlined" onClick={() => navigate("/home")}>
         Voltar
       </Button>
     </Box>
-    )
+  )
 };
 
 export default ListarReservasMateriais;
